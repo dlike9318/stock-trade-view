@@ -1,0 +1,168 @@
+.container {
+  background-color: #f5f5f5;
+  min-height: 100vh;
+  padding: 15rpx;
+}
+
+/* 市场概览 */
+.market-overview {
+  background-color: white;
+  border-radius: 12rpx;
+  padding: 20rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.05);
+}
+
+.overview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.overview-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.update-time {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.overview-stats {
+  display: flex;
+  justify-content: space-around;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-label {
+  font-size: 24rpx;
+  color: #666;
+  margin-bottom: 10rpx;
+}
+
+.stat-value {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.stat-value.up {
+  color: #52c41a;
+}
+
+.stat-value.down {
+  color: #ff4d4f;
+}
+
+/* 股票列表 */
+.stock-list {
+  background-color: white;
+  border-radius: 12rpx;
+  padding: 20rpx;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.05);
+}
+
+.list-header {
+  margin-bottom: 20rpx;
+}
+
+.list-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15rpx;
+  display: block;
+}
+
+.search-box {
+  margin-bottom: 20rpx;
+}
+
+.search-input {
+  width: 100%;
+  height: 60rpx;
+  border: 1rpx solid #e8e8e8;
+  border-radius: 30rpx;
+  padding: 0 30rpx;
+  font-size: 28rpx;
+  background-color: #fafafa;
+}
+
+.stock-items {
+  min-height: 400rpx;
+}
+
+.stock-item {
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+
+.stock-item:last-child {
+  border-bottom: none;
+}
+
+.stock-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.stock-basic {
+  flex: 1;
+}
+
+.stock-name {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 8rpx;
+  display: block;
+}
+
+.stock-symbol {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.stock-price {
+  text-align: right;
+}
+
+.price {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333;
+  display: block;
+  margin-bottom: 8rpx;
+}
+
+.stock-change {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.change {
+  font-size: 28rpx;
+  margin-bottom: 4rpx;
+}
+
+.change-percent {
+  font-size: 24rpx;
+}
+
+.up {
+  color: #52c41a;
+}
+
+.down {
+  color: #ff4d4f;
+}

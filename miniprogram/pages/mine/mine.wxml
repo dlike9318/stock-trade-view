@@ -1,0 +1,73 @@
+<view class="container">
+  <!-- 用户信息 -->
+  <view class="user-section">
+    <view class="user-info">
+      <view class="avatar">
+        <text class="avatar-text">{{ userInfo.nickName ? userInfo.nickName.charAt(0) : '游' }}</text>
+      </view>
+      <view class="user-details">
+        <text class="user-name">{{ userInfo.nickName || '游客' }}</text>
+        <text class="user-id">ID: {{ userInfo.id || '10000' }}</text>
+      </view>
+    </view>
+  </view>
+  
+  <!-- 功能菜单 -->
+  <view class="menu-section">
+    <view class="menu-group">
+      <view class="menu-item" bindtap="goToWatchlist">
+        <view class="menu-left">
+          <text class="menu-icon">⭐</text>
+          <text class="menu-text">我的自选</text>
+        </view>
+        <text class="menu-arrow">›</text>
+      </view>
+      <view class="menu-item" bindtap="goToHistory">
+        <view class="menu-left">
+          <text class="menu-icon">📈</text>
+          <text class="menu-text">浏览历史</text>
+        </view>
+        <text class="menu-arrow">›</text>
+      </view>
+      <view class="menu-item" bindtap="goToSettings">
+        <view class="menu-left">
+          <text class="menu-icon">⚙️</text>
+          <text class="menu-text">设置</text>
+        </view>
+        <text class="menu-arrow">›</text>
+      </view>
+    </view>
+    
+    <view class="menu-group">
+      <view class="menu-item" bindtap="goToAbout">
+        <view class="menu-left">
+          <text class="menu-icon">ℹ️</text>
+          <text class="menu-text">关于我们</text>
+        </view>
+        <text class="menu-arrow">›</text>
+      </view>
+      <view class="menu-item" bindtap="goToFeedback">
+        <view class="menu-left">
+          <text class="menu-icon">💬</text>
+          <text class="menu-text">意见反馈</text>
+        </view>
+        <text class="menu-arrow">›</text>
+      </view>
+    </view>
+  </view>
+  
+  <!-- 版本信息 -->
+  <view class="version-section">
+    <text class="version-text">版本 1.0.0</text>
+  </view>
+  
+  <!-- 登录/退出按钮 -->
+  <view class="action-section">
+    <button 
+      class="action-btn"
+      bindtap="handleAuth"
+    >
+      {{ userInfo.nickName ? '退出登录' : '登录' }}
+    </button>
+  </view>
+</view>

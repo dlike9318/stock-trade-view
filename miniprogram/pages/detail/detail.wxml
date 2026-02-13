@@ -1,0 +1,102 @@
+<view class="container">
+  <!-- 股票基本信息 -->
+  <view class="stock-info">
+    <view class="stock-header">
+      <text class="stock-name">{{ stockInfo.name }}</text>
+      <text class="stock-symbol">{{ stockInfo.symbol }}</text>
+    </view>
+    <view class="stock-price-info">
+      <text class="current-price">{{ stockInfo.price }}</text>
+      <view class="price-change">
+        <text class="change {{ stockInfo.change > 0 ? 'up' : 'down' }}">
+          {{ stockInfo.change > 0 ? '+' : '' }}{{ stockInfo.change }}
+        </text>
+        <text class="change-percent {{ stockInfo.changePercent > 0 ? 'up' : 'down' }}">
+          ({{ stockInfo.changePercent > 0 ? '+' : '' }}{{ stockInfo.changePercent }}%)
+        </text>
+      </view>
+    </view>
+  </view>
+  
+  <!-- 价格走势图 -->
+  <view class="chart-section">
+    <view class="chart-header">
+      <text class="chart-title">价格走势</text>
+      <view class="chart-tabs">
+        <text 
+          class="tab {{ activeTab === 'day' ? 'active' : '' }}"
+          bindtap="switchTab"
+          data-tab="day"
+        >
+          日K
+        </text>
+        <text 
+          class="tab {{ activeTab === 'week' ? 'active' : '' }}"
+          bindtap="switchTab"
+          data-tab="week"
+        >
+          周K
+        </text>
+        <text 
+          class="tab {{ activeTab === 'month' ? 'active' : '' }}"
+          bindtap="switchTab"
+          data-tab="month"
+        >
+          月K
+        </text>
+      </view>
+    </view>
+    <view class="chart-container">
+      <!-- 这里使用canvas绘制图表，实际项目中可以使用第三方图表库 -->
+      <view class="mock-chart">
+        <view class="chart-placeholder">
+          <text>价格走势图</text>
+          <text class="hint">实际项目中使用ECharts或其他图表库绘制</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  
+  <!-- 股票详细数据 -->
+  <view class="stock-details">
+    <view class="detail-header">
+      <text class="detail-title">详细数据</text>
+    </view>
+    <view class="detail-grid">
+      <view class="detail-item">
+        <text class="detail-label">开盘价</text>
+        <text class="detail-value">{{ stockDetails.open }}</text>
+      </view>
+      <view class="detail-item">
+        <text class="detail-label">最高价</text>
+        <text class="detail-value">{{ stockDetails.high }}</text>
+      </view>
+      <view class="detail-item">
+        <text class="detail-label">最低价</text>
+        <text class="detail-value">{{ stockDetails.low }}</text>
+      </view>
+      <view class="detail-item">
+        <text class="detail-label">成交量</text>
+        <text class="detail-value">{{ stockDetails.volume }}</text>
+      </view>
+      <view class="detail-item">
+        <text class="detail-label">成交额</text>
+        <text class="detail-value">{{ stockDetails.amount }}</text>
+      </view>
+      <view class="detail-item">
+        <text class="detail-label">换手率</text>
+        <text class="detail-value">{{ stockDetails.turnover }}%</text>
+      </view>
+    </view>
+  </view>
+  
+  <!-- 操作按钮 -->
+  <view class="action-buttons">
+    <button class="add-btn" bindtap="addToWatchlist">
+      {{ isInWatchlist ? '移除自选' : '添加自选' }}
+    </button>
+    <button class="refresh-btn" bindtap="refreshData">
+      刷新数据
+    </button>
+  </view>
+</view>

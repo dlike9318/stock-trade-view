@@ -1,0 +1,210 @@
+.container {
+  background-color: #f5f5f5;
+  min-height: 100vh;
+  padding: 15rpx;
+}
+
+/* 股票基本信息 */
+.stock-info {
+  background-color: white;
+  border-radius: 12rpx;
+  padding: 30rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.05);
+}
+
+.stock-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.stock-name {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.stock-symbol {
+  font-size: 28rpx;
+  color: #999;
+}
+
+.stock-price-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.current-price {
+  font-size: 48rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10rpx;
+}
+
+.price-change {
+  display: flex;
+  align-items: center;
+  gap: 15rpx;
+}
+
+.change {
+  font-size: 32rpx;
+}
+
+.change-percent {
+  font-size: 28rpx;
+}
+
+.up {
+  color: #52c41a;
+}
+
+.down {
+  color: #ff4d4f;
+}
+
+/* 价格走势图 */
+.chart-section {
+  background-color: white;
+  border-radius: 12rpx;
+  padding: 20rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.05);
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.chart-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.chart-tabs {
+  display: flex;
+  gap: 30rpx;
+}
+
+.tab {
+  font-size: 28rpx;
+  color: #666;
+  padding: 8rpx 16rpx;
+  border-radius: 20rpx;
+}
+
+.tab.active {
+  color: #1890ff;
+  background-color: #e6f7ff;
+  font-weight: bold;
+}
+
+.chart-container {
+  height: 400rpx;
+  background-color: #fafafa;
+  border-radius: 8rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mock-chart {
+  text-align: center;
+}
+
+.chart-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15rpx;
+}
+
+.chart-placeholder text:first-child {
+  font-size: 32rpx;
+  color: #999;
+}
+
+.hint {
+  font-size: 24rpx;
+  color: #ccc;
+}
+
+/* 股票详细数据 */
+.stock-details {
+  background-color: white;
+  border-radius: 12rpx;
+  padding: 20rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.05);
+}
+
+.detail-header {
+  margin-bottom: 20rpx;
+}
+
+.detail-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20rpx;
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20rpx;
+  background-color: #fafafa;
+  border-radius: 8rpx;
+}
+
+.detail-label {
+  font-size: 24rpx;
+  color: #666;
+  margin-bottom: 10rpx;
+}
+
+.detail-value {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+/* 操作按钮 */
+.action-buttons {
+  display: flex;
+  gap: 20rpx;
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+}
+
+.add-btn, .refresh-btn {
+  flex: 1;
+  height: 80rpx;
+  border-radius: 40rpx;
+  font-size: 32rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-btn {
+  background-color: #1890ff;
+  color: white;
+}
+
+.refresh-btn {
+  background-color: #f0f0f0;
+  color: #333;
+}

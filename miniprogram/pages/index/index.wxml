@@ -1,0 +1,65 @@
+<view class="container">
+  <!-- 市场概览 -->
+  <view class="market-overview">
+    <view class="overview-header">
+      <text class="overview-title">市场概览</text>
+      <text class="update-time">{{ updateTime }}</text>
+    </view>
+    <view class="overview-stats">
+      <view class="stat-item">
+        <text class="stat-label">上涨</text>
+        <text class="stat-value up">{{ marketData.upCount }}</text>
+      </view>
+      <view class="stat-item">
+        <text class="stat-label">下跌</text>
+        <text class="stat-value down">{{ marketData.downCount }}</text>
+      </view>
+      <view class="stat-item">
+        <text class="stat-label">平盘</text>
+        <text class="stat-value">{{ marketData.flatCount }}</text>
+      </view>
+    </view>
+  </view>
+  
+  <!-- 股票列表 -->
+  <view class="stock-list">
+    <view class="list-header">
+      <text class="list-title">股票列表</text>
+      <view class="search-box">
+        <input 
+          class="search-input" 
+          placeholder="搜索股票代码或名称" 
+          bindinput="onSearch"
+          value="{{ searchQuery }}"
+        />
+      </view>
+    </view>
+    <view class="stock-items">
+      <view 
+        wx:for="{{ filteredStocks }}" 
+        wx:key="item.symbol"
+        class="stock-item"
+        bindtap="goToDetail"
+        data-symbol="{{ item.symbol }}"
+      >
+        <view class="stock-info">
+          <view class="stock-basic">
+            <text class="stock-name">{{ item.name }}</text>
+            <text class="stock-symbol">{{ item.symbol }}</text>
+          </view>
+          <view class="stock-price">
+            <text class="price">{{ item.price }}</text>
+            <view class="stock-change">
+              <text class="change {{ item.change > 0 ? 'up' : 'down' }}">
+                {{ item.change > 0 ? '+' : '' }}{{ item.change }}
+              </text>
+              <text class="change-percent {{ item.changePercent > 0 ? 'up' : 'down' }}">
+                ({{ item.changePercent > 0 ? '+' : '' }}{{ item.changePercent }}%)
+              </text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
