@@ -1,11 +1,4 @@
 {
   "version": "1",
-  "packages": {
-    "backend": {
-      "name": "stock-trade-backend",
-      "path": "./backend",
-      "language": "node",
-      "start_command": "node index.js"
-    }
-  }
+  "packages": "backend"
 }
