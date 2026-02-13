@@ -1,0 +1,36 @@
+# 华为云函数计算配置
+function:
+  name: stock-trade-api
+  description: 股市实时交易数据API
+  handler: index.handler
+  runtime: Node.js18.17
+  memorySize: 256
+  timeout: 30
+  environment:
+    NODE_ENV: production
+
+# 触发器配置
+triggers:
+  - type: APIG
+    name: stock-api
+    properties:
+      protocol: HTTPS
+      method: GET
+      path: /api/stock/list
+      function: index.stockList
+  
+  - type: APIG
+    name: stock-detail-api
+    properties:
+      protocol: HTTPS
+      method: GET
+      path: /api/stock/{symbol}
+      function: index.stockDetail
+  
+  - type: APIG
+    name: market-overview-api
+    properties:
+      protocol: HTTPS
+      method: GET
+      path: /api/market/overview
+      function: index.marketOverview

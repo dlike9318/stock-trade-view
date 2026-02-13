@@ -1,0 +1,9 @@
+{
+  "name": "stock-trade-huawei",
+  "version": "1.0.0",
+  "description": "华为云函数计算 - 股票数据API",
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^1.7.9"
+  }
+}
